@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vlO-JO-L7A">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Jobs-->
+        <scene sceneID="als-zK-iLw">
+            <objects>
+                <tableViewController id="GrC-UP-4Hz" customClass="JobsTableViewController" customModule="After_College_Job_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="v8j-gx-N1h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JobCell" id="7Yy-uF-G5L">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Yy-uF-G5L" id="wzT-Fd-VKl">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GrC-UP-4Hz" id="zAl-RZ-1jU"/>
+                            <outlet property="delegate" destination="GrC-UP-4Hz" id="10T-o3-wv5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Jobs" id="ueS-cB-5XH">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="ipk-to-e8l">
+                            <color key="tintColor" red="0.74117647060000003" green="0.37647058820000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="onClickLogout:" destination="GrC-UP-4Hz" id="I0T-l3-6zF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="maQ-rh-1OD">
+                            <color key="tintColor" red="0.74117647060000003" green="0.37647058820000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="onClickAddJob:" destination="GrC-UP-4Hz" id="aua-kN-Kp4"/>
+                                <segue destination="eXA-pW-QId" kind="show" id="5tP-E3-CrP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ba5-E0-XMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3024.8000000000002" y="-8.5457271364317844"/>
+        </scene>
+        <!--Add Job-->
+        <scene sceneID="jfo-M8-kOA">
+            <objects>
+                <viewController id="eXA-pW-QId" customClass="AddJobViewController" customModule="After_College_Job_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Esl-dQ-bTq"/>
+                        <viewControllerLayoutGuide type="bottom" id="eAS-Ti-Xci"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I7G-mB-UJ9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LOE-gP-1gd">
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Where are you applying?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CuA-2E-FUf">
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yx9-mC-5Aa">
+                                        <segments>
+                                            <segment title="Sent Resume"/>
+                                            <segment title="Have Interview"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.74117647060000003" green="0.37647058820000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                                    </segmentedControl>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VFq-jv-z7h">
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receive notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LeY-VO-ana">
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dWa-iD-r6O"/>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="VFq-jv-z7h" firstAttribute="leading" secondItem="LOE-gP-1gd" secondAttribute="leading" id="CIv-9h-orp"/>
+                                    <constraint firstAttribute="trailing" secondItem="CuA-2E-FUf" secondAttribute="trailing" id="SL9-Fv-DWd"/>
+                                    <constraint firstAttribute="trailing" secondItem="VFq-jv-z7h" secondAttribute="trailing" id="UVw-I9-1dd"/>
+                                    <constraint firstItem="CuA-2E-FUf" firstAttribute="leading" secondItem="LOE-gP-1gd" secondAttribute="leading" id="sAx-OD-2hL"/>
+                                </constraints>
+                            </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Zma-Za-ElB">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="jzz-YI-uY3"/>
+                                    <constraint firstAttribute="height" constant="40" id="oFT-zm-YoF"/>
+                                </constraints>
+                                <color key="color" red="0.74117647060000003" green="0.37647058820000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zma-Za-ElB" firstAttribute="centerX" secondItem="I7G-mB-UJ9" secondAttribute="centerX" id="B7i-6Q-Yne"/>
+                            <constraint firstItem="Zma-Za-ElB" firstAttribute="centerY" secondItem="I7G-mB-UJ9" secondAttribute="centerY" id="ZwD-0Y-5E4"/>
+                            <constraint firstItem="LOE-gP-1gd" firstAttribute="top" secondItem="Esl-dQ-bTq" secondAttribute="bottom" constant="16" id="kve-8W-7FC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LOE-gP-1gd" secondAttribute="trailing" id="uHq-yq-izl"/>
+                            <constraint firstItem="LOE-gP-1gd" firstAttribute="leading" secondItem="I7G-mB-UJ9" secondAttribute="leadingMargin" id="wfg-Vy-sRe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Job" id="hKZ-LG-chh">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="VIJ-JB-GBG">
+                            <color key="tintColor" red="0.74117647060000003" green="0.37647058820000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="onClickSave:" destination="eXA-pW-QId" id="1GK-2g-cvX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="jobTextField" destination="CuA-2E-FUf" id="ixQ-xV-3Lw"/>
+                        <outlet property="notificationSwitch" destination="dWa-iD-r6O" id="Zxb-5z-jJy"/>
+                        <outlet property="progressIndicator" destination="Zma-Za-ElB" id="kKN-2G-3Qb"/>
+                        <outlet property="statusSegmentedControl" destination="yx9-mC-5Aa" id="4Mp-lI-6RA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fs6-gd-euE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3823" y="-10"/>
+        </scene>
+        <!--Nav-->
+        <scene sceneID="dIk-kh-jPg">
+            <objects>
+                <navigationController title="Nav" automaticallyAdjustsScrollViewInsets="NO" id="vlO-JO-L7A" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vx8-Au-EDP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.74117647060000003" green="0.37647058820000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GrC-UP-4Hz" kind="relationship" relationship="rootViewController" id="3bK-iy-8pH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fAn-hu-s2B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2085.5999999999999" y="-8.5457271364317844"/>
+        </scene>
+    </scenes>
+</document>
