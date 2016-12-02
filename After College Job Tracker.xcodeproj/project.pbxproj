@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		027708A11DF06F10002E36CB /* AddJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027708A01DF06F10002E36CB /* AddJobViewController.swift */; };
+		027708A31DF0741F002E36CB /* JobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027708A21DF0741F002E36CB /* JobTableViewCell.swift */; };
+		027708A51DF081DB002E36CB /* AuthContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027708A41DF081DB002E36CB /* AuthContract.swift */; };
+		027708A71DF0841D002E36CB /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027708A61DF0841D002E36CB /* SignUpPresenter.swift */; };
+		027708A91DF094BE002E36CB /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027708A81DF094BE002E36CB /* LoginPresenter.swift */; };
+		027708AB1DF09CFB002E36CB /* JobsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027708AA1DF09CFB002E36CB /* JobsContract.swift */; };
+		027708AE1DF09DC9002E36CB /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027708AD1DF09DC9002E36CB /* Job.swift */; };
+		027708B01DF0A5A6002E36CB /* JobsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027708AF1DF0A5A6002E36CB /* JobsPresenter.swift */; };
+		027708B21DF0DE60002E36CB /* AddJobContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027708B11DF0DE60002E36CB /* AddJobContract.swift */; };
+		027708B41DF0E0E0002E36CB /* AddJobPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027708B31DF0E0E0002E36CB /* AddJobPresenter.swift */; };
 		027A61071DEFC2BD00B180A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A61061DEFC2BD00B180A8 /* AppDelegate.swift */; };
 		027A61091DEFC2BD00B180A8 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A61081DEFC2BD00B180A8 /* AuthViewController.swift */; };
 		027A610C1DEFC2BD00B180A8 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 027A610A1DEFC2BD00B180A8 /* Auth.storyboard */; };
@@ -16,12 +26,21 @@
 		027A611F1DEFCD9700B180A8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A611E1DEFCD9700B180A8 /* LoginViewController.swift */; };
 		027A61211DEFCDA200B180A8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A61201DEFCDA200B180A8 /* SignUpViewController.swift */; };
 		027A61231DEFCDC300B180A8 /* JobsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A61221DEFCDC300B180A8 /* JobsTableViewController.swift */; };
-		027A61271DEFD60100B180A8 /* AddJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A61261DEFD60100B180A8 /* AddJobViewController.swift */; };
 		027A61291DEFE00C00B180A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 027A61281DEFE00C00B180A8 /* GoogleService-Info.plist */; };
 		49F435861D5580462EB91FCC /* Pods_After_College_Job_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4ACA773B1364B258E113FC3 /* Pods_After_College_Job_Tracker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		027708A01DF06F10002E36CB /* AddJobViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddJobViewController.swift; sourceTree = SOURCE_ROOT; };
+		027708A21DF0741F002E36CB /* JobTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobTableViewCell.swift; sourceTree = "<group>"; };
+		027708A41DF081DB002E36CB /* AuthContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthContract.swift; path = SignUp/AuthContract.swift; sourceTree = "<group>"; };
+		027708A61DF0841D002E36CB /* SignUpPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
+		027708A81DF094BE002E36CB /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		027708AA1DF09CFB002E36CB /* JobsContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsContract.swift; sourceTree = "<group>"; };
+		027708AD1DF09DC9002E36CB /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		027708AF1DF0A5A6002E36CB /* JobsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsPresenter.swift; sourceTree = "<group>"; };
+		027708B11DF0DE60002E36CB /* AddJobContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddJobContract.swift; path = "After College Job Tracker/Jobs/AddJobContract.swift"; sourceTree = SOURCE_ROOT; };
+		027708B31DF0E0E0002E36CB /* AddJobPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddJobPresenter.swift; path = "After College Job Tracker/Jobs/AddJobPresenter.swift"; sourceTree = SOURCE_ROOT; };
 		027A61031DEFC2BD00B180A8 /* After College Job Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "After College Job Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		027A61061DEFC2BD00B180A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		027A61081DEFC2BD00B180A8 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthViewController.swift; path = ../AuthViewController.swift; sourceTree = "<group>"; };
@@ -33,7 +52,6 @@
 		027A611E1DEFCD9700B180A8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		027A61201DEFCDA200B180A8 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		027A61221DEFCDC300B180A8 /* JobsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsTableViewController.swift; sourceTree = "<group>"; };
-		027A61261DEFD60100B180A8 /* AddJobViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddJobViewController.swift; path = ../AddJobViewController.swift; sourceTree = "<group>"; };
 		027A61281DEFE00C00B180A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		22268A76C151472A5165A89B /* Pods-After College Job Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-After College Job Tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-After College Job Tracker/Pods-After College Job Tracker.debug.xcconfig"; sourceTree = "<group>"; };
 		915DC68BE852F2776BF69C10 /* Pods-After College Job Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-After College Job Tracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-After College Job Tracker/Pods-After College Job Tracker.release.xcconfig"; sourceTree = "<group>"; };
@@ -52,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		027708AC1DF09DBE002E36CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				027708AD1DF09DC9002E36CB /* Job.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		027A60FA1DEFC2BC00B180A8 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +99,7 @@
 		027A61051DEFC2BD00B180A8 /* After College Job Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				027708AC1DF09DBE002E36CB /* Model */,
 				027A61281DEFE00C00B180A8 /* GoogleService-Info.plist */,
 				027A611B1DEFCC0F00B180A8 /* Jobs */,
 				027A611A1DEFCBCD00B180A8 /* Auth */,
@@ -87,6 +114,7 @@
 		027A611A1DEFCBCD00B180A8 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				027708A41DF081DB002E36CB /* AuthContract.swift */,
 				027A611D1DEFCD6500B180A8 /* Login */,
 				027A611C1DEFCD5100B180A8 /* SignUp */,
 				027A61081DEFC2BD00B180A8 /* AuthViewController.swift */,
@@ -101,6 +129,9 @@
 				027A61251DEFD5E600B180A8 /* Add Job */,
 				027A61181DEFCA2300B180A8 /* Jobs.storyboard */,
 				027A61221DEFCDC300B180A8 /* JobsTableViewController.swift */,
+				027708A21DF0741F002E36CB /* JobTableViewCell.swift */,
+				027708AA1DF09CFB002E36CB /* JobsContract.swift */,
+				027708AF1DF0A5A6002E36CB /* JobsPresenter.swift */,
 			);
 			path = Jobs;
 			sourceTree = "<group>";
@@ -109,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				027A61201DEFCDA200B180A8 /* SignUpViewController.swift */,
+				027708A61DF0841D002E36CB /* SignUpPresenter.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -117,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				027A611E1DEFCD9700B180A8 /* LoginViewController.swift */,
+				027708A81DF094BE002E36CB /* LoginPresenter.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -124,7 +157,9 @@
 		027A61251DEFD5E600B180A8 /* Add Job */ = {
 			isa = PBXGroup;
 			children = (
-				027A61261DEFD60100B180A8 /* AddJobViewController.swift */,
+				027708A01DF06F10002E36CB /* AddJobViewController.swift */,
+				027708B11DF0DE60002E36CB /* AddJobContract.swift */,
+				027708B31DF0E0E0002E36CB /* AddJobPresenter.swift */,
 			);
 			path = "Add Job";
 			sourceTree = "<group>";
@@ -272,12 +307,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				027708A71DF0841D002E36CB /* SignUpPresenter.swift in Sources */,
 				027A611F1DEFCD9700B180A8 /* LoginViewController.swift in Sources */,
 				027A61091DEFC2BD00B180A8 /* AuthViewController.swift in Sources */,
+				027708AB1DF09CFB002E36CB /* JobsContract.swift in Sources */,
 				027A61231DEFCDC300B180A8 /* JobsTableViewController.swift in Sources */,
+				027708A91DF094BE002E36CB /* LoginPresenter.swift in Sources */,
+				027708A51DF081DB002E36CB /* AuthContract.swift in Sources */,
+				027708AE1DF09DC9002E36CB /* Job.swift in Sources */,
+				027708A31DF0741F002E36CB /* JobTableViewCell.swift in Sources */,
+				027708B41DF0E0E0002E36CB /* AddJobPresenter.swift in Sources */,
 				027A61211DEFCDA200B180A8 /* SignUpViewController.swift in Sources */,
-				027A61271DEFD60100B180A8 /* AddJobViewController.swift in Sources */,
+				027708A11DF06F10002E36CB /* AddJobViewController.swift in Sources */,
+				027708B21DF0DE60002E36CB /* AddJobContract.swift in Sources */,
 				027A61071DEFC2BD00B180A8 /* AppDelegate.swift in Sources */,
+				027708B01DF0A5A6002E36CB /* JobsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +366,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -371,6 +416,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

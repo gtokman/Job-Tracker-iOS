@@ -10,7 +10,7 @@
         <!--Jobs-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AuthViewController" customModule="After_College_Job_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthStoryBoard" id="BYZ-38-t0r" customClass="AuthViewController" customModule="After_College_Job_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -40,7 +40,7 @@
                                     <constraint firstAttribute="height" constant="325" id="kQd-4G-jrv"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="CLP-Bv-1q4">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="CLP-Bv-1q4">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMV-11-kcC">
                                         <color key="backgroundColor" red="0.74117647060000003" green="0.37647058820000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
@@ -131,7 +131,6 @@
                                         </state>
                                         <connections>
                                             <action selector="onClickLogin:" destination="jEu-u8-err" eventType="touchUpInside" id="tvk-7d-vLQ"/>
-                                            <segue destination="pBk-sb-AET" kind="presentation" id="Mei-62-Sfh"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -170,6 +169,7 @@
                         <outlet property="emailTextField" destination="9bR-mc-rbP" id="N3c-bb-Z6U"/>
                         <outlet property="passwordTextField" destination="U3N-4j-94G" id="EWx-hY-9cx"/>
                         <outlet property="progressIndicator" destination="aFR-DX-ff6" id="KXF-JN-ppI"/>
+                        <segue destination="pBk-sb-AET" kind="presentation" identifier="ShowJobs" id="pZe-7g-0yx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZVo-11-Wtb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -230,7 +230,6 @@
                                         </state>
                                         <connections>
                                             <action selector="onClickSignUp:" destination="99p-pM-B52" eventType="touchUpInside" id="s5H-fA-jDB"/>
-                                            <segue destination="pBk-sb-AET" kind="presentation" id="7mf-VV-eQ5"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -259,6 +258,7 @@
                         <outlet property="passwordTextField" destination="ykw-x6-3r1" id="CBz-vu-MOo"/>
                         <outlet property="progressIndicator" destination="dos-ez-8db" id="KnG-gE-gvF"/>
                         <outlet property="userNameTextField" destination="eiR-Ik-Wi9" id="qIN-QY-jKd"/>
+                        <segue destination="pBk-sb-AET" kind="presentation" identifier="ShowJobs" id="9cX-92-xWR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuP-RX-iao" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -275,6 +275,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Mei-62-Sfh"/>
+        <segue reference="pZe-7g-0yx"/>
     </inferredMetricsTieBreakers>
 </document>

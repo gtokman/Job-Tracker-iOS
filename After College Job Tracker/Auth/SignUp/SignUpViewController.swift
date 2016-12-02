@@ -14,14 +14,16 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var userNameTextField: UITextField!
-
     @IBOutlet weak var passwordTextField: UITextField!
-    
     @IBOutlet weak var progressIndicator: UIActivityIndicatorView!
+    
+    private var presenter: NewSignUpPresenter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        presenter = NewSignUpPresenter(view: self)
+        
         // Do any additional setup after loading the view.
     }
 
@@ -31,16 +33,40 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func onClickSignUp(_ sender: UIButton) {
+        presenter?.signInUser()
     }
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension SignUpViewController: SignUpView {
+    
+    func getEmailAddress() -> String? {
+        return emailTextField.text
     }
-    */
-
+    
+    func getUserName() -> String? {
+        return userNameTextField.text
+    }
+    
+    func getPassword() -> String? {
+        return passwordTextField.text
+    }
+    
+    func showProgressIndicator() {
+        progressIndicator.startAnimating()
+    }
+    
+    func hideProgressIndicator() {
+        progressIndicator.stopAnimating()
+    }
+    
+    func segueAfterAuth() {
+        performSegue(withIdentifier: "ShowJobs", sender: nil)
+    }
+    
+    func showError(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
 }

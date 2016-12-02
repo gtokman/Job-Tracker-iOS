@@ -15,10 +15,12 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var progressIndicator: UIActivityIndicatorView!
     
+    private var presenter: NewLoginPresenter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        presenter = NewLoginPresenter(view: self)
         // Do any additional setup after loading the view.
     }
 
@@ -28,18 +30,39 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func onClickLogin(_ sender: UIButton) {
+        presenter?.loginUser()
     }
 
     @IBAction func onClickForgotPassword(_ sender: UIButton) {
+        presenter?.userForgotPassword()
     }
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension LoginViewController: LoginView {
+    func getEmailAddress() -> String? {
+        return emailTextField.text
     }
-    */
-
+    
+    func getPassword() -> String? {
+        return passwordTextField.text
+    }
+    
+    func showProgressIndicator() {
+        progressIndicator.startAnimating()
+    }
+    
+    func hideProgressIndicator() {
+        progressIndicator.stopAnimating()
+    }
+    
+    func segueAfterAuth() {
+        performSegue(withIdentifier: "ShowJobs", sender: nil)
+    }
+    
+    func showError(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
 }

@@ -11,18 +11,59 @@
         <scene sceneID="als-zK-iLw">
             <objects>
                 <tableViewController id="GrC-UP-4Hz" customClass="JobsTableViewController" customModule="After_College_Job_Tracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="v8j-gx-N1h">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="v8j-gx-N1h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JobCell" id="7Yy-uF-G5L">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JobCell" rowHeight="100" id="7Yy-uF-G5L" customClass="JobTableViewCell" customModule="After_College_Job_Tracker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Yy-uF-G5L" id="wzT-Fd-VKl">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3aI-3T-VlZ">
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Company name: Google" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dU-BI-Mf5">
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status: Have Interview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdL-6x-yqR">
+                                                    <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZdL-6x-yqR" firstAttribute="leading" secondItem="3aI-3T-VlZ" secondAttribute="leading" id="BLg-3f-5q7"/>
+                                                <constraint firstItem="3dU-BI-Mf5" firstAttribute="leading" secondItem="3aI-3T-VlZ" secondAttribute="leading" id="JlH-1T-x5m"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZdL-6x-yqR" secondAttribute="trailing" id="otx-Ot-sOz"/>
+                                                <constraint firstAttribute="trailing" secondItem="3dU-BI-Mf5" secondAttribute="trailing" id="pUa-yK-LUQ"/>
+                                            </constraints>
+                                        </stackView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_notifications" translatesAutoresizingMaskIntoConstraints="NO" id="dnf-Pb-EO3">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="16F-If-iNY"/>
+                                                <constraint firstAttribute="width" constant="30" id="Haz-ek-tdT"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3aI-3T-VlZ" firstAttribute="leading" secondItem="wzT-Fd-VKl" secondAttribute="leadingMargin" constant="8" id="0If-5D-YE6"/>
+                                        <constraint firstItem="dnf-Pb-EO3" firstAttribute="leading" secondItem="3aI-3T-VlZ" secondAttribute="trailing" constant="8" id="3hK-kJ-K53"/>
+                                        <constraint firstItem="3aI-3T-VlZ" firstAttribute="top" secondItem="wzT-Fd-VKl" secondAttribute="topMargin" constant="8" id="Nlk-zW-8zj"/>
+                                        <constraint firstItem="dnf-Pb-EO3" firstAttribute="centerY" secondItem="wzT-Fd-VKl" secondAttribute="centerY" id="Obi-1L-eMi"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="3aI-3T-VlZ" secondAttribute="bottom" constant="8" id="mxd-Uo-vhP"/>
+                                        <constraint firstItem="dnf-Pb-EO3" firstAttribute="trailing" secondItem="wzT-Fd-VKl" secondAttribute="trailingMargin" constant="-8" id="rda-SP-pWy"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="companName" destination="3dU-BI-Mf5" id="bpq-y6-7zJ"/>
+                                    <outlet property="jobStatus" destination="ZdL-6x-yqR" id="sKc-ki-OCg"/>
+                                    <outlet property="notificationImage" destination="dnf-Pb-EO3" id="t34-We-7jm"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -115,15 +156,15 @@
                         <barButtonItem key="rightBarButtonItem" title="Save" id="VIJ-JB-GBG">
                             <color key="tintColor" red="0.74117647060000003" green="0.37647058820000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="onClickSave:" destination="eXA-pW-QId" id="1GK-2g-cvX"/>
+                                <action selector="onClickSave:" destination="eXA-pW-QId" id="ciE-YC-N5E"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="jobTextField" destination="CuA-2E-FUf" id="ixQ-xV-3Lw"/>
-                        <outlet property="notificationSwitch" destination="dWa-iD-r6O" id="Zxb-5z-jJy"/>
-                        <outlet property="progressIndicator" destination="Zma-Za-ElB" id="kKN-2G-3Qb"/>
-                        <outlet property="statusSegmentedControl" destination="yx9-mC-5Aa" id="4Mp-lI-6RA"/>
+                        <outlet property="jobTextField" destination="CuA-2E-FUf" id="SNO-yP-rO5"/>
+                        <outlet property="notificationSwitch" destination="dWa-iD-r6O" id="9aB-AY-u2e"/>
+                        <outlet property="progressIndicator" destination="Zma-Za-ElB" id="Sz6-Bv-df8"/>
+                        <outlet property="statusSegControl" destination="yx9-mC-5Aa" id="0l4-HW-bws"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fs6-gd-euE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -135,7 +176,7 @@
             <objects>
                 <navigationController title="Nav" automaticallyAdjustsScrollViewInsets="NO" id="vlO-JO-L7A" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vx8-Au-EDP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vx8-Au-EDP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.74117647060000003" green="0.37647058820000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
@@ -153,4 +194,7 @@
             <point key="canvasLocation" x="2085.5999999999999" y="-8.5457271364317844"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_notifications" width="24" height="24"/>
+    </resources>
 </document>
