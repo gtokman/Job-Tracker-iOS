@@ -20,6 +20,12 @@ class NewJobsPresenter: JobsPresenter {
     
     func onStart() {
         
+        FIRAuth.auth()?.addStateDidChangeListener { (auth, user) in
+            if user == nil {
+                self.view.showLoginView()
+            }
+        }
+        
         view.showProgressIndicator()
         
         let jobsRef = FIRDatabase.database().reference().child("users")
@@ -58,6 +64,13 @@ class NewJobsPresenter: JobsPresenter {
     }
     
     func logoutUser() {
-        
+        view.showProgressIndicator()
+        do {
+            view.hideProgressIndicator()
+            try FIRAuth.auth()?.signOut()
+        } catch let error {
+            view.hideProgressIndicator()
+            view.showError(message: error.localizedDescription)
+        }
     }
 }

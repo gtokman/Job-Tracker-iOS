@@ -13,9 +13,20 @@ class JobsTableViewController: UITableViewController {
     
     fileprivate var jobs = [Job]()
     fileprivate var presenter: NewJobsPresenter?
+    fileprivate var progressIndicator: UIActivityIndicatorView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         initProgressIndicator()
+        
+        if FIRAuth.auth()?.currentUser == nil {
+            let authStoryBoard: UIStoryboard? = UIStoryboard(name: "Auth", bundle: Bundle.main)
+            if let authView = authStoryBoard?.instantiateViewController(withIdentifier: "AuthStoryBoard") {
+                present(authView, animated: true, completion: nil)
+                return
+            }
+        }
+        
         presenter = NewJobsPresenter(view: self)
     }
     
@@ -29,9 +40,18 @@ class JobsTableViewController: UITableViewController {
         presenter?.onStop()
     }
     
+    func initProgressIndicator() {
+        progressIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        progressIndicator?.activityIndicatorViewStyle = .gray
+        progressIndicator?.center = view.center
+        progressIndicator?.hidesWhenStopped = true
+        view.addSubview(progressIndicator!)
+    }
+    
     // MARK: - Actions
     
     @IBAction func onClickLogout(_ sender: UIBarButtonItem) {
+        presenter?.logoutUser()
     }
     
     @IBAction func onClickAddJob(_ sender: UIBarButtonItem) {
@@ -71,6 +91,8 @@ extension JobsTableViewController {
     }
 }
 
+// MARK: - JobsView
+
 extension JobsTableViewController: JobsView {
     
     func showJob(job: Job) {
@@ -81,12 +103,20 @@ extension JobsTableViewController: JobsView {
         }
     }
     
-    func showProgressIndicator() {
+    func showLoginView() {
         
+        let authStoryBoard: UIStoryboard? = UIStoryboard(name: "Auth", bundle: Bundle.main)
+        if let authView = authStoryBoard?.instantiateViewController(withIdentifier: "AuthStoryBoard") {
+            self.present(authView, animated: true, completion: nil)
+        }
+    }
+    
+    func showProgressIndicator() {
+        progressIndicator?.startAnimating()
     }
     
     func hideProgressIndicator() {
-        
+        progressIndicator?.stopAnimating()
     }
     
     func showError(message: String) {
