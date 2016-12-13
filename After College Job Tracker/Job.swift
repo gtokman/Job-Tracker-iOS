@@ -11,9 +11,9 @@ import FirebaseDatabase
 
 struct Job: Equatable {
     let id: String
-    let company: String
-    let status: String
-    let notification: Bool
+    var company: String
+    var status: String
+    var notification: Bool
 }
 
 extension Job {

@@ -55,6 +55,7 @@ class JobsTableViewController: UITableViewController {
     }
     
     @IBAction func onClickAddJob(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "AddJob", sender: nil)
     }
 }
 
@@ -91,6 +92,22 @@ extension JobsTableViewController {
     }
 }
 
+// MARK: - Table view delegate
+
+extension JobsTableViewController {
+   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! AddJobViewController
+        if segue.identifier == "AddJob" {
+            print("Hello world")
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let job = jobs[indexPath.row]
+                destinationVC.job = job
+            }
+        }
+    }
+}
+
 // MARK: - JobsView
 
 extension JobsTableViewController: JobsView {
@@ -100,6 +117,13 @@ extension JobsTableViewController: JobsView {
             jobs.append(job)
             let indexPath = IndexPath(row: tableView.numberOfRows(inSection: 0), section: 0)
             tableView.insertRows(at: [indexPath], with: .top)
+        }
+    }
+    
+    func updateJob(job: Job) {
+        if jobs.contains(job) {
+            
+            
         }
     }
     

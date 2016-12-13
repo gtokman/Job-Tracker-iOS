@@ -18,4 +18,5 @@ protocol AddJobsView: LoadingActions {
 
 protocol AddJobsPresenter {
     func saveJobPost()
+    func updateJobPost(job: Job)
 }

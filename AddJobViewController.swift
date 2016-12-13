@@ -12,35 +12,58 @@ class AddJobViewController: UIViewController {
     
     // MARK: - Properties
     
-    @IBOutlet weak var jobTextField: UITextField!
-    @IBOutlet weak var statusSegControl: UISegmentedControl!
-    @IBOutlet weak var notificationSwitch: UISwitch!
+    @IBOutlet weak var jobTextField: UITextField? {
+        didSet{
+            if let job = job {
+                jobTextField?.text = job.company
+            }
+        }
+    }
+    @IBOutlet weak var statusSegControl: UISegmentedControl? {
+        didSet {
+            if let job = job {
+                statusSegControl?.setTitle(job.status, forSegmentAt: statusSegControl!.selectedSegmentIndex)
+            }
+        }
+    }
+    @IBOutlet weak var notificationSwitch: UISwitch? {
+        didSet {
+            if let job = job {
+                notificationSwitch?.isOn = job.notification
+            }
+        }
+    }
     @IBOutlet weak var progressIndicator: UIActivityIndicatorView!
     
+    public var job: Job?
     fileprivate var presenter: NewAddJobsPresenter?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = NewAddJobsPresenter(view: self)
     }
     
     @IBAction func onClickSave(_ sender: UIBarButtonItem) {
-        presenter?.saveJobPost()
+        if let job = job {
+            presenter?.updateJobPost(job: job)
+        } else {
+            presenter?.saveJobPost()
+        }
     }
 }
 
 extension AddJobViewController: AddJobsView {
     
     func getCompanyName() -> String? {
-        return jobTextField.text
+        return jobTextField?.text
     }
     
     func getStatusValue() -> String? {
-        return statusSegControl.titleForSegment(at: statusSegControl.selectedSegmentIndex)
+        return statusSegControl!.titleForSegment(at: statusSegControl!.selectedSegmentIndex)
     }
     
     func getNotificationValue() -> Bool {
-        return notificationSwitch.isOn
+        return notificationSwitch!.isOn
     }
     
     func showProgressIndicator() {

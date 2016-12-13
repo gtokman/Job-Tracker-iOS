@@ -10,6 +10,7 @@ import Foundation
 
 protocol JobsView: LoadingActions {
     func showJob(job: Job)
+    func updateJob(job: Job)
     func showLoginView()
 }
 

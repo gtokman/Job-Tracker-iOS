@@ -17,10 +17,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JobCell" rowHeight="100" id="7Yy-uF-G5L" customClass="JobTableViewCell" customModule="After_College_Job_Tracker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Yy-uF-G5L" id="wzT-Fd-VKl">
-                                    <frame key="frameInset" width="375" height="99"/>
+                                    <frame key="frameInset" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3aI-3T-VlZ">
@@ -63,6 +63,7 @@
                                     <outlet property="companName" destination="3dU-BI-Mf5" id="bpq-y6-7zJ"/>
                                     <outlet property="jobStatus" destination="ZdL-6x-yqR" id="sKc-ki-OCg"/>
                                     <outlet property="notificationImage" destination="dnf-Pb-EO3" id="t34-We-7jm"/>
+                                    <segue destination="eXA-pW-QId" kind="show" identifier="AddJob" id="g9W-ZP-e04"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -82,7 +83,6 @@
                             <color key="tintColor" red="0.74117647060000003" green="0.37647058820000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onClickAddJob:" destination="GrC-UP-4Hz" id="aua-kN-Kp4"/>
-                                <segue destination="eXA-pW-QId" kind="show" id="5tP-E3-CrP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
