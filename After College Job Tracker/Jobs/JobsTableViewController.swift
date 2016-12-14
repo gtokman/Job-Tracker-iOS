@@ -109,7 +109,6 @@ extension JobsTableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! AddJobViewController
         if segue.identifier == "AddJob" {
-            print("Hello world")
             if let indexPath = tableView.indexPathForSelectedRow {
                 let job = jobs[indexPath.row]
                 destinationVC.job = job

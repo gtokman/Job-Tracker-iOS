@@ -18,30 +18,33 @@ class NewLoginPresenter: LoginPresenter {
     }
     
     func loginUser() {
-        
-        view.showProgressIndicator()
-        
-        guard let email = view.getEmailAddress(), !email.isEmpty,
-        let password = view.getPassword(), !password.isEmpty else {
-            view.hideProgressIndicator()
-            view.showError(message: "No empty fields! 🙄")
-            return
-        }
-        
-        FIRAuth.auth()?.signIn(withEmail: email, password: password) {
-            (user, error) in
+        if CheckNetwork.hasNetworkConnection() {
+            view.showProgressIndicator()
             
-            guard error == nil else {
-                self.view.hideProgressIndicator()
-                self.view.showError(message: error!.localizedDescription)
-                return
+            guard let email = view.getEmailAddress(), !email.isEmpty,
+                let password = view.getPassword(), !password.isEmpty else {
+                    view.hideProgressIndicator()
+                    view.showError(message: "No empty fields! 🙄")
+                    return
             }
             
-            if let user = user {
-                print("Signing in user \(user.email)")
-                self.view.hideProgressIndicator()
-                self.view.segueAfterAuth()
+            FIRAuth.auth()?.signIn(withEmail: email, password: password) {
+                (user, error) in
+                
+                guard error == nil else {
+                    self.view.hideProgressIndicator()
+                    self.view.showError(message: error!.localizedDescription)
+                    return
+                }
+                
+                if let user = user {
+                    print("Signing in user \(user.email)")
+                    self.view.hideProgressIndicator()
+                    self.view.segueAfterAuth()
+                }
             }
+        } else {
+            view.showError(message: "No network connection 🙄")
         }
     }
     

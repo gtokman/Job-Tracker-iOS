@@ -20,13 +20,22 @@ class NewJobsPresenter: JobsPresenter {
     
     func onStart() {
         
+        if CheckNetwork.hasNetworkConnection() {
+            print("has network 😁")
+            view.showProgressIndicator()
+            
+        } else {
+            print("no network 😬")
+            view.hideProgressIndicator()
+            view.showError(message: "Sorry no network connection: data will sync when reconnected.")
+        }
+        
+        
         FIRAuth.auth()?.addStateDidChangeListener { (auth, user) in
             if user == nil {
                 self.view.showLoginView()
             }
         }
-        
-        view.showProgressIndicator()
         
         let jobsRef = FIRDatabase.database().reference().child("users")
             .child(FIRAuth.auth()!.currentUser!.uid).child("jobs")

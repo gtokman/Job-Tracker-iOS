@@ -18,31 +18,34 @@ class NewSignUpPresenter: SignUpPresenter {
     }
     
     func signInUser() {
-        
-        view.showProgressIndicator()
-        
-        guard let email = view.getEmailAddress() , !email.isEmpty,
-            let username = view.getUserName(), !username.isEmpty,
-            let password = view.getPassword(), !password.isEmpty else {
-            view.showError(message: "No empty fields! 🙄")
-                view.hideProgressIndicator()
-                return
-        }
-        
-        FIRAuth.auth()?.createUser(withEmail: email, password: password) {
-            (user, error) in
+        if CheckNetwork.hasNetworkConnection() {
+            view.showProgressIndicator()
             
-            self.view.hideProgressIndicator()
-            
-            guard error == nil else {
-                self.view.showError(message: error!.localizedDescription)
-                return
+            guard let email = view.getEmailAddress() , !email.isEmpty,
+                let username = view.getUserName(), !username.isEmpty,
+                let password = view.getPassword(), !password.isEmpty else {
+                    view.showError(message: "No empty fields! 🙄")
+                    view.hideProgressIndicator()
+                    return
             }
             
-            if let newUser = user {
-                print("We have a user \(newUser.email)")
-                self.view.segueAfterAuth()
+            FIRAuth.auth()?.createUser(withEmail: email, password: password) {
+                (user, error) in
+                
+                self.view.hideProgressIndicator()
+                
+                guard error == nil else {
+                    self.view.showError(message: error!.localizedDescription)
+                    return
+                }
+                
+                if let newUser = user {
+                    print("We have a user \(newUser.email)")
+                    self.view.segueAfterAuth()
+                }
             }
+        } else {
+            view.showError(message: "No network connection 🙄")
         }
     }
 }

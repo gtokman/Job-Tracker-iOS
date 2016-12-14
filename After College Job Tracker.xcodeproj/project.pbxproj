@@ -27,6 +27,8 @@
 		027A61211DEFCDA200B180A8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A61201DEFCDA200B180A8 /* SignUpViewController.swift */; };
 		027A61231DEFCDC300B180A8 /* JobsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027A61221DEFCDC300B180A8 /* JobsTableViewController.swift */; };
 		027A61291DEFE00C00B180A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 027A61281DEFE00C00B180A8 /* GoogleService-Info.plist */; };
+		02C9F1501E01DCF800D3476D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02C9F14F1E01DCF800D3476D /* SystemConfiguration.framework */; };
+		02C9F1571E01E55200D3476D /* CheckNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C9F1561E01E55200D3476D /* CheckNetwork.m */; };
 		49F435861D5580462EB91FCC /* Pods_After_College_Job_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4ACA773B1364B258E113FC3 /* Pods_After_College_Job_Tracker.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,10 @@
 		027A61201DEFCDA200B180A8 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		027A61221DEFCDC300B180A8 /* JobsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsTableViewController.swift; sourceTree = "<group>"; };
 		027A61281DEFE00C00B180A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		02C9F14F1E01DCF800D3476D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		02C9F1541E01E55200D3476D /* After College Job Tracker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "After College Job Tracker-Bridging-Header.h"; sourceTree = "<group>"; };
+		02C9F1551E01E55200D3476D /* CheckNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckNetwork.h; path = CheckNetwork/CheckNetwork.h; sourceTree = "<group>"; };
+		02C9F1561E01E55200D3476D /* CheckNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckNetwork.m; path = CheckNetwork/CheckNetwork.m; sourceTree = "<group>"; };
 		22268A76C151472A5165A89B /* Pods-After College Job Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-After College Job Tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-After College Job Tracker/Pods-After College Job Tracker.debug.xcconfig"; sourceTree = "<group>"; };
 		915DC68BE852F2776BF69C10 /* Pods-After College Job Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-After College Job Tracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-After College Job Tracker/Pods-After College Job Tracker.release.xcconfig"; sourceTree = "<group>"; };
 		B4ACA773B1364B258E113FC3 /* Pods_After_College_Job_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_After_College_Job_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02C9F1501E01DCF800D3476D /* SystemConfiguration.framework in Frameworks */,
 				49F435861D5580462EB91FCC /* Pods_After_College_Job_Tracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +106,7 @@
 		027A61051DEFC2BD00B180A8 /* After College Job Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				02C9F1531E01E4F100D3476D /* NetworkCheck */,
 				027708AC1DF09DBE002E36CB /* Model */,
 				027A61281DEFE00C00B180A8 /* GoogleService-Info.plist */,
 				027A611B1DEFCC0F00B180A8 /* Jobs */,
@@ -164,9 +172,20 @@
 			path = "Add Job";
 			sourceTree = "<group>";
 		};
+		02C9F1531E01E4F100D3476D /* NetworkCheck */ = {
+			isa = PBXGroup;
+			children = (
+				02C9F1551E01E55200D3476D /* CheckNetwork.h */,
+				02C9F1561E01E55200D3476D /* CheckNetwork.m */,
+				02C9F1541E01E55200D3476D /* After College Job Tracker-Bridging-Header.h */,
+			);
+			name = NetworkCheck;
+			sourceTree = "<group>";
+		};
 		745645F507CA7619E8156FA0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				02C9F14F1E01DCF800D3476D /* SystemConfiguration.framework */,
 				B4ACA773B1364B258E113FC3 /* Pods_After_College_Job_Tracker.framework */,
 			);
 			name = Frameworks;
@@ -217,6 +236,7 @@
 					027A61021DEFC2BC00B180A8 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = NTP2A7PJM8;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -308,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				027708A71DF0841D002E36CB /* SignUpPresenter.swift in Sources */,
+				02C9F1571E01E55200D3476D /* CheckNetwork.m in Sources */,
 				027A611F1DEFCD9700B180A8 /* LoginViewController.swift in Sources */,
 				027A61091DEFC2BD00B180A8 /* AuthViewController.swift in Sources */,
 				027708AB1DF09CFB002E36CB /* JobsContract.swift in Sources */,
@@ -446,11 +467,14 @@
 			baseConfigurationReference = 22268A76C151472A5165A89B /* Pods-After College Job Tracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = NTP2A7PJM8;
 				INFOPLIST_FILE = "After College Job Tracker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.garytokman.After-College-Job-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "After College Job Tracker/After College Job Tracker-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -460,11 +484,13 @@
 			baseConfigurationReference = 915DC68BE852F2776BF69C10 /* Pods-After College Job Tracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = NTP2A7PJM8;
 				INFOPLIST_FILE = "After College Job Tracker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.garytokman.After-College-Job-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "After College Job Tracker/After College Job Tracker-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
