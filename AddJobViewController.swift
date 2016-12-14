@@ -22,7 +22,11 @@ class AddJobViewController: UIViewController {
     @IBOutlet weak var statusSegControl: UISegmentedControl? {
         didSet {
             if let job = job {
-                statusSegControl?.setTitle(job.status, forSegmentAt: statusSegControl!.selectedSegmentIndex)
+                if job.status == "Sent Resume" {
+                    statusSegControl?.selectedSegmentIndex = 0
+                } else {
+                    statusSegControl?.selectedSegmentIndex = 1
+                }
             }
         }
     }

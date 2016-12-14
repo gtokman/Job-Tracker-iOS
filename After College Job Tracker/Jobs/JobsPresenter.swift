@@ -41,6 +41,19 @@ class NewJobsPresenter: JobsPresenter {
             self.view.hideProgressIndicator()
             self.view.showError(message: error.localizedDescription)
         }
+        
+        jobsRef.observe(.childChanged, with: { (snapshot) in
+            self.view.hideProgressIndicator()
+            
+            let job = Job(snapshot: snapshot)
+            if let job = job {
+                self.view.updateJob(job: job)
+            }
+            
+        }) { (error) in
+            self.view.hideProgressIndicator()
+            self.view.showError(message: error.localizedDescription)
+        }
     }
     
     func removeJob(job: Job) {

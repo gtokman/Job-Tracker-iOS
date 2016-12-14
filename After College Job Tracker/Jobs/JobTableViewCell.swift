@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol UpdateTableView {
+    func updateTable()
+}
+
 class JobTableViewCell: UITableViewCell {
     
     // MARK: - Properties
@@ -16,12 +20,15 @@ class JobTableViewCell: UITableViewCell {
     @IBOutlet weak var jobStatus: UILabel!
     @IBOutlet weak var notificationImage: UIImageView!
     
+    public var delegate: UpdateTableView?
+    
     public var job: Job? {
         didSet {
             if let job = job {
                 companName.text = job.company
                 jobStatus.text = job.status
                 notificationImage.isHidden = !job.notification
+                delegate?.updateTable()
             }
         }
     }

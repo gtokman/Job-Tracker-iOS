@@ -17,7 +17,7 @@ class JobsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         initProgressIndicator()
+        initProgressIndicator()
         
         if FIRAuth.auth()?.currentUser == nil {
             let authStoryBoard: UIStoryboard? = UIStoryboard(name: "Auth", bundle: Bundle.main)
@@ -59,6 +59,15 @@ class JobsTableViewController: UITableViewController {
     }
 }
 
+// MARK: - Update the table view from custom cell
+
+extension JobsTableViewController: UpdateTableView {
+    func updateTable() {
+        
+//        tableView.reloadData()
+    }
+}
+
 // MARK: - Table view data source
 
 extension JobsTableViewController {
@@ -87,6 +96,7 @@ extension JobsTableViewController {
         
         let job = jobs[indexPath.row]
         cell.job = job
+        cell.delegate = self
         
         return cell
     }
@@ -95,7 +105,7 @@ extension JobsTableViewController {
 // MARK: - Table view delegate
 
 extension JobsTableViewController {
-   
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! AddJobViewController
         if segue.identifier == "AddJob" {
@@ -121,10 +131,10 @@ extension JobsTableViewController: JobsView {
     }
     
     func updateJob(job: Job) {
-        if jobs.contains(job) {
-            
-            
-        }
+        let index = jobs.index(of: job)
+        jobs.remove(at: index!)
+        jobs.insert(job, at: index!)
+        tableView.reloadData()
     }
     
     func showLoginView() {
