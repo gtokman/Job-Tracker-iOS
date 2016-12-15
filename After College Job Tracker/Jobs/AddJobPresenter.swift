@@ -42,6 +42,11 @@ class NewAddJobsPresenter: AddJobsPresenter {
             
             self.view.popViewController()
         }
+        
+        if !CheckNetwork.hasNetworkConnection() {
+            view.hideProgressIndicator()
+            view.popViewController()
+        }
     }
     
     func updateJobPost(job: Job) {
@@ -69,6 +74,11 @@ class NewAddJobsPresenter: AddJobsPresenter {
             
             self.view.hideProgressIndicator()
             self.view.popViewController()
+        }
+        
+        if !CheckNetwork.hasNetworkConnection() {
+            view.hideProgressIndicator()
+            view.popViewController()
         }
     }
 }

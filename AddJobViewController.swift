@@ -47,6 +47,8 @@ class AddJobViewController: UIViewController {
         presenter = NewAddJobsPresenter(view: self)
     }
     
+    // MARK: - Actions
+    
     @IBAction func onClickSave(_ sender: UIBarButtonItem) {
         if let job = job {
             presenter?.updateJobPost(job: job)
@@ -55,6 +57,8 @@ class AddJobViewController: UIViewController {
         }
     }
 }
+
+// MARK: - Jobs View
 
 extension AddJobViewController: AddJobsView {
     
